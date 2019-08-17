@@ -18,8 +18,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onConvertButton(View view) {
+        Log.i("Info", "Convert Button was pressed.");
         EditText pounds = (EditText) findViewById(R.id.numberEditText);
-        double dollars = Double.valueOf(pounds.getText().toString()) * 1.22;
-        Toast.makeText(this, "$" + dollars, Toast.LENGTH_LONG);
+        double dollars = Double.parseDouble(pounds.getText().toString()) * 1.22;
+        Log.i("Dollars", "$" + String.format("%.2f", dollars));
+        Toast.makeText(this, "$" + String.format("%.2f", dollars), Toast.LENGTH_LONG).show();
+
     }
 }
